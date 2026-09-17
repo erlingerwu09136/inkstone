@@ -11,18 +11,18 @@ export function stripCodeRegions(text: string): string {
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]!
-    const m = /^[ \t]{0,3}(`{3,}|~{3,})/.exec(line)
-    if (m) {
-      const marker = m[1]!
-      const ch = marker[0]!
+    const match = /^[ \t]{0,3}(`{3,}|~{3,})/.exec(line)
+    if (match) {
+      const marker = match[1]!
+      const char = marker[0]!
       if (!inFence) {
         inFence = true
-        fenceChar = ch
+        fenceChar = char
         fenceLen = marker.length
         lines[i] = ''
         continue
       }
-      if (ch === fenceChar && marker.length >= fenceLen) {
+      if (char === fenceChar && marker.length >= fenceLen) {
         inFence = false
         lines[i] = ''
         continue
@@ -32,7 +32,7 @@ export function stripCodeRegions(text: string): string {
       lines[i] = ''
       continue
     }
-    lines[i] = line.replace(/`+[^`\n]*`+/g, (s) => ' '.repeat(s.length))
+    lines[i] = line.replace(/`+[^`\n]*`+/g, (value) => ' '.repeat(value.length))
   }
   return stripObsidianCommentRegions(lines.join('\n'))
 }
@@ -479,6 +479,10 @@ function markdownExampleBodies(text: string): string[] {
         // A closing fence may only be followed by spaces or tabs.
         bodies.push(collecting.join('\n'))
         collecting = null
+        continue
+      } else {
+        collecting.push(line)
+        continue
       }
       continue
     }
