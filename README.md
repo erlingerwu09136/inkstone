@@ -24,7 +24,9 @@ It is a complete self-hosted application. The deployer retains control of the da
 Every new account automatically receives two standard starter notes, one in Chinese and one in English. The browser-only demo reuses the same note content; refreshing the page restores these two starter notes instead of loading a separate set of demo data.
 
 > **中文说明**：  
-> Inkstone（砚石）是一套完全运行在 Cloudflare Workers Serverless 架构上的自托管浏览器 Markdown 个人知识库与笔记本。笔记始终保持为标准 Markdown 纯文本；在此基础上提供专注沉浸式写作、双栏实时预览、D1 FTS5 全文搜索与私有语义搜索、双向链接、离线编辑与自动同步、原生 MCP AI 接入、公开分享以及 WebDAV / S3 异地备份等全套能力。数据与运行环境完全自托管，零服务器维护成本。
+> Inkstone（砚石）是一套完全运行在 Cloudflare Workers Serverless 架构上的自托管浏览器 Markdown 个人知识库与笔记本。笔记始终保持为标准 Markdown 纯文本；在此基础上提供专注沉浸式写作、双栏实时预览、D1 FTS5 全文搜索与私有语义搜索、双向链接、离线编辑与自动同步、原生 MCP AI 接入、公开分享以及 WebDAV / S3 异地备份等全套能力。数据与运行环境完全自托管，零服务器维护成本。  
+>   
+> **⭐ 本 Fork 优化与体验改进**：针对原版严格遵循 Markdown 导致回车不自动折行、输入繁琐的问题，本项目重构优化了渲染逻辑，**实现了自然换行（回车即换行），无需手动键入多余空格**，完美契合中文日常排版与快速记录习惯；同时修复了 Node 25+ 环境下的测试兼容性与 Cloudflare 部署中的 KV 重名绑定问题，开箱体验更加丝滑稳定。
 
 
 ### 📌 Fork Updates & Fixes
