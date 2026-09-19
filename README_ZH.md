@@ -25,14 +25,17 @@ Inkstone 是运行在 Cloudflare Workers 上的浏览器笔记本。笔记始终
 
 ### 📌 本 Fork 仓库更新与修复说明 (Fork Notes)
 
-在原版 Inkstone 基础上，本项目进行了针对性的兼容性优化与部署修复：
+在原版 Inkstone 基础上，本项目进行了针对性的兼容性优化与排版体验改进：
 
-1. **测试环境兼容修复 (Node 25+)**：
+1. **排版与换行优化（符合日常输入习惯）**：
+   - 原版严格遵循标准 Markdown 语法，普通回车不会自动折行，必须行尾打两个空格或空行，导致日常笔记记录不便。
+   - 本项目针对渲染引擎启用软换行支持（`breaks: true`），普通单次回车即可自然换行，告别繁琐的手动空格换行，大幅提升中文日常记录与碎片笔记体验。
+2. **测试环境兼容修复 (Node 25+)**：
    - 修复在 Node.js v25+ 环境下运行单元测试时，由于原生 Web Storage 与 jsdom 冲突导致 `TypeError: localStorage.clear is not a function` 的问题。
    - 增加 `tests/setup-jsdom.ts` 环境适配补丁，确保单元测试 100% 全部通过（13/13 test files，67/67 tests passed）。
-2. **代码风格与注释准入策略规范**：
+3. **代码风格与注释准入策略规范**：
    - 适配 `scripts/check-comments.mjs`，更新白名单并清除不符合规范的内嵌注释，使 `npm run comments:check` 顺利通过。
-3. **Cloudflare 自动化部署资源绑定完善**：
+4. **Cloudflare 自动化部署资源绑定完善**：
    - 配置并绑定预置的 `FILES_KV` 和 `OAUTH_KV` 命名空间 ID，解决初次或二次部署时 Cloudflare API 报 `code: 10014 (namespace already exists)` 导致的构建中断问题。
    - 完善 `.gitignore`，避免本地与辅助工具开发配置被误上传。
 

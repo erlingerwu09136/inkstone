@@ -29,14 +29,17 @@ Every new account automatically receives two standard starter notes, one in Chin
 
 ### 📌 Fork Updates & Fixes
 
-This fork includes several fixes and compatibility enhancements based on the upstream project:
+This fork includes several fixes, UX enhancements, and compatibility improvements based on the upstream project:
 
-1. **Test Environment Compatibility (Node 25+)**:
+1. **Natural Line Breaks (Everyday Note-taking Friendly)**:
+   - Upstream strictly enforced standard Markdown newline rules (ignoring single linebreaks unless two trailing spaces were typed).
+   - Configured `breaks: true` in the markdown rendering pipeline so single linebreaks wrap naturally without requiring extra spaces, fitting daily typing habits much better.
+2. **Test Environment Compatibility (Node 25+)**:
    - Fixed `TypeError: localStorage.clear is not a function` occurring in Node 25+ environments under `jsdom` due to Node's built-in Web Storage conflict.
    - Added `tests/setup-jsdom.ts` and updated `vitest.config.ts`, ensuring 100% test suite pass rate (13/13 test files, 67/67 unit tests).
-2. **Comment Policy & Checks**:
+3. **Comment Policy & Checks**:
    - Synchronized `scripts/check-comments.mjs` whitelist and cleaned up unapproved CSS comments to make `npm run comments:check` fully pass.
-3. **Cloudflare Deployment Improvements**:
+4. **Cloudflare Deployment Improvements**:
    - Explicitly bound `FILES_KV` and `OAUTH_KV` namespace IDs in configuration to prevent Cloudflare deploy failures caused by duplicate namespace creation errors (`code: 10014`).
    - Improved `.gitignore` to keep workspace and tool metadata clean.
 
