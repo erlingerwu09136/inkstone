@@ -427,8 +427,6 @@
   }
 }
 
-
-/* Live preview shares the preview typography without nesting scroll containers. */
 .ink-editor[data-live='true'] .cm-editor {
   font-family: var(--font-ui);
   font-size: var(--prose-size, 16px);

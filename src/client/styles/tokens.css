@@ -133,7 +133,6 @@
   --text-primary: oklch(21% 0.01 265);
   --text-secondary: oklch(44% 0.01 265);
   --text-tertiary: oklch(58% 0.009 265);
-  /* Small labels are used on both the editor and the darker sunken sidebar. */
   --text-quaternary: oklch(51% 0.008 265);
   --text-inverse: oklch(99% 0 0);
 

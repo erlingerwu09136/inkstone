@@ -17,6 +17,7 @@ export default defineConfig({
         test: {
           name: 'jsdom',
           environment: 'jsdom',
+          setupFiles: [resolve('./tests/setup-jsdom.ts')],
           include: ['src/**/*.test.ts', 'tests/**/*.test.ts'],
           exclude: ['src/worker/lib/request.test.ts', 'src/client/demo/backend.test.ts', 'src/worker/lib/obsidian-import.test.ts'],
         },
