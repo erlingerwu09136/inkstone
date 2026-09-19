@@ -23,6 +23,20 @@ It is a complete self-hosted application. The deployer retains control of the da
 
 Every new account automatically receives two standard starter notes, one in Chinese and one in English. The browser-only demo reuses the same note content; refreshing the page restores these two starter notes instead of loading a separate set of demo data.
 
+### 📌 Fork Updates & Fixes
+
+This fork includes several fixes and compatibility enhancements based on the upstream project:
+
+1. **Test Environment Compatibility (Node 25+)**:
+   - Fixed `TypeError: localStorage.clear is not a function` occurring in Node 25+ environments under `jsdom` due to Node's built-in Web Storage conflict.
+   - Added `tests/setup-jsdom.ts` and updated `vitest.config.ts`, ensuring 100% test suite pass rate (13/13 test files, 67/67 unit tests).
+2. **Comment Policy & Checks**:
+   - Synchronized `scripts/check-comments.mjs` whitelist and cleaned up unapproved CSS comments to make `npm run comments:check` fully pass.
+3. **Cloudflare Deployment Improvements**:
+   - Explicitly bound `FILES_KV` and `OAUTH_KV` namespace IDs in configuration to prevent Cloudflare deploy failures caused by duplicate namespace creation errors (`code: 10014`).
+   - Improved `.gitignore` to keep workspace and tool metadata clean.
+
+
 ## Features
 
 | Area | Included |
