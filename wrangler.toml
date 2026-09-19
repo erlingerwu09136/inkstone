@@ -32,6 +32,7 @@ bucket_name = "inkstone-files"
 
 [[kv_namespaces]]
 binding = "OAUTH_KV"
+id = "a4fb30f8524e483f8ce3e39a414f3d11"
 
 [[durable_objects.bindings]]
 name = "SYNC_HUB"

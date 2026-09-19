@@ -28,9 +28,11 @@ database_name = "inkstone-db"
 
 [[kv_namespaces]]
 binding = "FILES_KV"
+id = "df3b8482ca6340039c1b3e98bf1868a5"
 
 [[kv_namespaces]]
 binding = "OAUTH_KV"
+id = "a4fb30f8524e483f8ce3e39a414f3d11"
 
 [[durable_objects.bindings]]
 name = "SYNC_HUB"
