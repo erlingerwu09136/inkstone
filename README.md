@@ -15,13 +15,17 @@
   <a href="https://inkstone-demo.pages.dev/">Demo</a>
 </p>
 
-## About
+## About / 关于项目
 
 Inkstone is a browser-based notebook that runs on Cloudflare Workers. Notes always remain plain Markdown text; on top of that foundation, the application provides focused writing, live preview, lexical and optional semantic search, bidirectional links, offline editing, multi-device synchronization, private AI access, public sharing, and off-site backups.
 
 It is a complete self-hosted application. The deployer retains control of the database, attachments, and runtime environment.
 
 Every new account automatically receives two standard starter notes, one in Chinese and one in English. The browser-only demo reuses the same note content; refreshing the page restores these two starter notes instead of loading a separate set of demo data.
+
+> **中文说明**：  
+> Inkstone（砚石）是一套完全运行在 Cloudflare Workers Serverless 架构上的自托管浏览器 Markdown 个人知识库与笔记本。笔记始终保持为标准 Markdown 纯文本；在此基础上提供专注沉浸式写作、双栏实时预览、D1 FTS5 全文搜索与私有语义搜索、双向链接、离线编辑与自动同步、原生 MCP AI 接入、公开分享以及 WebDAV / S3 异地备份等全套能力。数据与运行环境完全自托管，零服务器维护成本。
+
 
 ### 📌 Fork Updates & Fixes
 
